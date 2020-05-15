@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { PomodoroContext } from '../context/GlobalState';
+import useInterval from '../useInterval';
 
 // will receive currentTimer from context to display Timer
 
@@ -13,7 +14,19 @@ const convertTime = (milliseconds) => {
 };
 
 const Timer = () => {
-  const { breakTime, sessionTime, currentTimer } = useContext(PomodoroContext);
+  const { currentTimer, setTimer, changeTimer } = useContext(PomodoroContext);
+  useInterval(
+    () => {
+      setTimer(currentTimer.time - 1000);
+    },
+    currentTimer.running && currentTimer.time !== 0 ? 1000 : null
+  );
+  useEffect(() => {
+    if (currentTimer.time === 0) {
+      changeTimer(currentTimer.type);
+    }
+  });
+
   return <h1>{convertTime(currentTimer.time)}</h1>;
 };
 

@@ -6,7 +6,7 @@ const initialState = {
   sessionTime: 25,
   currentTimer: {
     type: 'Session',
-    time: 1500000,
+    time: 15000,
     running: false,
   },
 };
@@ -51,7 +51,18 @@ export const PomodoroProvider = ({ children }) => {
       type: 'RESET',
     });
   };
-
+  const setTimer = (time) => {
+    dispatch({
+      type: 'SET_TIMER',
+      time,
+    });
+  };
+  const changeTimer = (kind) => {
+    dispatch({
+      type: 'CHANGE_TIMER',
+      kind,
+    });
+  };
   return (
     <PomodoroContext.Provider
       value={{
@@ -65,6 +76,8 @@ export const PomodoroProvider = ({ children }) => {
         reset,
         start,
         stop,
+        setTimer,
+        changeTimer,
       }}
     >
       {children}

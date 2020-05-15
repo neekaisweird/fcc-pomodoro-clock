@@ -81,6 +81,32 @@ export default (state, action) => {
         ...state,
         currentTimer: { ...state.currentTimer, running: false },
       };
+    case 'SET_TIMER':
+      return {
+        ...state,
+        currentTimer: { ...state.currentTimer, time: action.time },
+      };
+    case 'CHANGE_TIMER':
+      if (action.kind === 'Session') {
+        return {
+          ...state,
+          currentTimer: {
+            type: 'Break',
+            time: state.breakTime * 60000,
+            running: true,
+          },
+        };
+      } else {
+        return {
+          ...state,
+          currentTimer: {
+            type: 'Session',
+            time: state.sessionTime * 60000,
+            running: true,
+          },
+        };
+      }
+
     default:
       return state;
   }
