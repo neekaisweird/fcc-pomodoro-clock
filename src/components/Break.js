@@ -13,15 +13,17 @@ const Break = () => {
   } = useContext(PomodoroContext);
   return (
     <div>
-      Break
+      <h4 id="break-label">Break Length</h4>
       <button
+        id="break-decrement"
         disabled={currentTimer.running || breakTime === 1}
         onClick={() => breakDecrement()}
       >
         ↓
       </button>
-      {breakTime}
+      <h5 id="break-length">{breakTime}</h5>
       <button
+        id="break-increment"
         disabled={currentTimer.running || breakTime === 60}
         onClick={() => breakIncrement()}
       >

@@ -13,15 +13,17 @@ const Session = () => {
   } = useContext(PomodoroContext);
   return (
     <div>
-      Session
+      <h4 id="session-label">Session Length</h4>
       <button
+        id="session-decrement"
         disabled={currentTimer.running || sessionTime === 1}
         onClick={() => sessionDecrement()}
       >
         ↓
       </button>
-      {sessionTime}
+      <h5 id="session-length">{sessionTime}</h5>
       <button
+        id="session-increment"
         disabled={currentTimer.running || sessionTime === 60}
         onClick={() => sessionIncrement()}
       >

@@ -8,9 +8,13 @@ const StartStop = () => {
   return (
     <div>
       {currentTimer.running ? (
-        <button onClick={() => stop()}>Stop</button>
+        <button id="start_stop" onClick={() => stop()}>
+          Pause
+        </button>
       ) : (
-        <button onClick={() => start()}>Start</button>
+        <button id="start_stop" onClick={() => start()}>
+          Start
+        </button>
       )}
     </div>
   );

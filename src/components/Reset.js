@@ -6,15 +6,14 @@ import { PomodoroContext } from '../context/GlobalState';
 const Reset = () => {
   const { reset } = useContext(PomodoroContext);
   return (
-    <div>
-      <button
-        onClick={() => {
-          reset();
-        }}
-      >
-        Reset
-      </button>
-    </div>
+    <button
+      id="reset"
+      onClick={() => {
+        reset();
+      }}
+    >
+      Reset
+    </button>
   );
 };
 

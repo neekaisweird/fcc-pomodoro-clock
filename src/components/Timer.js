@@ -17,7 +17,7 @@ const Timer = () => {
   const { currentTimer, setTimer, changeTimer } = useContext(PomodoroContext);
   const beep = useRef();
   const playBeep = () => {
-    if (beep.current !== null && currentTimer.time === 0) {
+    if (beep.current !== null) {
       beep.current.currentTime = 0;
       beep.current.play();
     }

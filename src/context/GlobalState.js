@@ -6,7 +6,7 @@ const initialState = {
   sessionTime: 25,
   currentTimer: {
     type: 'Session',
-    time: 5000,
+    time: 1500000,
     running: false,
   },
 };
