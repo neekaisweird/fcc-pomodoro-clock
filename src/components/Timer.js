@@ -31,7 +31,15 @@ const Timer = () => {
   );
   useEffect(() => {
     if (currentTimer.time === 0) playBeep();
-    if (currentTimer.time === -1000) changeTimer(currentTimer.type);
+    if (currentTimer.time === 1000)
+      setTimeout(() => {
+        changeTimer(currentTimer.type);
+      }, 1000);
+
+    if (!currentTimer.running) {
+      beep.current.pause();
+      beep.current.currentTime = 0;
+    }
   });
 
   return (
