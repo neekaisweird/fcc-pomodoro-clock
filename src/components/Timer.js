@@ -1,8 +1,38 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { PomodoroContext } from '../context/GlobalState';
 import useInterval from '../hooks/useInterval';
+import styled from 'styled-components';
 
-// will receive currentTimer from context to display Timer
+const Circle = styled.div`
+  border: 10px solid #c0121d;
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+  background-color: #d93a44;
+  color: #fff;
+`;
+
+const TimerWrapper = styled.div`
+  font-family: 'Fira Code', monospace;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+`;
+
+const TimerLeft = styled.h1`
+  font-size: 6rem;
+  font-weight: 400;
+  margin: 1rem 0;
+`;
+
+const TimerLabel = styled.h2`
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+`;
 
 const convertTime = (milliseconds) => {
   let seconds = Math.floor(milliseconds / 1000);
@@ -43,16 +73,20 @@ const Timer = () => {
   });
 
   return (
-    <div>
-      <h2 id="timer-label">{currentTimer.type}</h2>
-      <h1 id="time-left">{convertTime(currentTimer.time)}</h1>
+    <Circle>
+      <TimerWrapper>
+        <TimerLeft id="time-left">{convertTime(currentTimer.time)}</TimerLeft>
+        <TimerLabel id="timer-label">
+          {currentTimer.type === 'Session' ? 'Focus Time' : 'Break Time'}
+        </TimerLabel>
+      </TimerWrapper>
       <audio
         id="beep"
         ref={beep}
         src="https://sampleswap.org/samples-ghost/DRUM%20LOOPS%20and%20BREAKS/121%20to%20130%20bpm/331[kb]125_lo-squeaky-beep.aif.mp3"
         // src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Weird%20and%20Interesting%20Hits/66[kb]three-beep-stereo.aif.mp3"
       />
-    </div>
+    </Circle>
   );
 };
 
