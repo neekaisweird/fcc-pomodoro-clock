@@ -1,6 +1,7 @@
 import React from 'react';
 import Timer from './Timer';
 import Controls from './Controls';
+import Circle from './Circle';
 import styled from 'styled-components';
 
 const Clock = styled.div`
@@ -13,6 +14,7 @@ const Clock = styled.div`
 const PomodoroClock = () => {
   return (
     <Clock>
+      <Circle />
       <Timer />
       <Controls />
     </Clock>

@@ -3,15 +3,6 @@ import { PomodoroContext } from '../context/GlobalState';
 import useInterval from '../hooks/useInterval';
 import styled from 'styled-components';
 
-const Circle = styled.div`
-  border: 10px solid #c0121d;
-  border-radius: 50%;
-  height: 400px;
-  width: 400px;
-  background-color: #d93a44;
-  color: #fff;
-`;
-
 const TimerWrapper = styled.div`
   font-family: 'Fira Code', monospace;
   text-align: center;
@@ -73,7 +64,7 @@ const Timer = () => {
   });
 
   return (
-    <Circle>
+    <div>
       <TimerWrapper>
         <TimerLeft id="time-left">{convertTime(currentTimer.time)}</TimerLeft>
         <TimerLabel id="timer-label">
@@ -86,7 +77,7 @@ const Timer = () => {
         src="https://sampleswap.org/samples-ghost/DRUM%20LOOPS%20and%20BREAKS/121%20to%20130%20bpm/331[kb]125_lo-squeaky-beep.aif.mp3"
         // src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Weird%20and%20Interesting%20Hits/66[kb]three-beep-stereo.aif.mp3"
       />
-    </Circle>
+    </div>
   );
 };
 
