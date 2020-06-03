@@ -6,7 +6,7 @@ import { PomodoroContext } from '../context/GlobalState';
 const StartStop = () => {
   const { currentTimer, start, stop } = useContext(PomodoroContext);
   return (
-    <div>
+    <>
       {currentTimer.running ? (
         <button id="start_stop" onClick={() => stop()}>
           Pause
@@ -16,7 +16,7 @@ const StartStop = () => {
           Start
         </button>
       )}
-    </div>
+    </>
   );
 };
 

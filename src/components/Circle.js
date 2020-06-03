@@ -44,6 +44,9 @@ const Circle = () => {
         height: radius * 2,
         width: radius * 2,
         backgroundColor: 'transparent',
+        gridColumn: 1,
+        gridRow: 1,
+        zIndex: -1,
       }}
     >
       <Border ref={progressCircle} />

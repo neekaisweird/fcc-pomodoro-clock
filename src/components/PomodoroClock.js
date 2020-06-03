@@ -14,8 +14,11 @@ const Clock = styled.div`
 const PomodoroClock = () => {
   return (
     <Clock>
-      <Circle />
-      <Timer />
+      <div style={{ display: 'grid' }}>
+        <Timer />
+        <Circle />
+      </div>
+
       <Controls />
     </Clock>
   );

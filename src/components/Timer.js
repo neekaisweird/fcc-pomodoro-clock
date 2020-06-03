@@ -10,6 +10,8 @@ const TimerWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 400px;
+  grid-column: 1;
+  grid-row: 1;
 `;
 
 const TimerLeft = styled.h1`
@@ -64,7 +66,7 @@ const Timer = () => {
   });
 
   return (
-    <div>
+    <>
       <TimerWrapper>
         <TimerLeft id="time-left">{convertTime(currentTimer.time)}</TimerLeft>
         <TimerLabel id="timer-label">
@@ -77,7 +79,7 @@ const Timer = () => {
         src="https://sampleswap.org/samples-ghost/DRUM%20LOOPS%20and%20BREAKS/121%20to%20130%20bpm/331[kb]125_lo-squeaky-beep.aif.mp3"
         // src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Weird%20and%20Interesting%20Hits/66[kb]three-beep-stereo.aif.mp3"
       />
-    </div>
+    </>
   );
 };
 
