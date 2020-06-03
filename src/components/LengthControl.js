@@ -3,7 +3,6 @@ import { PomodoroContext } from '../context/GlobalState';
 import styled from 'styled-components';
 
 const Control = styled.div`
-  padding: 0.5rem;
   font-family: 'Fira Code', monospace;
   text-align: center;
 `;
@@ -12,23 +11,25 @@ const Label = styled.h4`
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin: 0;
 `;
 
-const Length = styled.h5`
-  display: inline;
+const Length = styled.div`
+  display: inline-block;
   font-size: 2rem;
   font-weight: 500;
+  width: 50px;
 `;
 
 const Button = styled.button`
-  background-color: #f6ede4;
+  background-color: transparent;
   border: none;
   display: inline;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-family: inherit;
-  padding: 0.5rem 1.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
 `;
 
 const LengthControl = ({ type }) => {

@@ -12,6 +12,8 @@ const TimerWrapper = styled.div`
   height: 400px;
   grid-column: 1;
   grid-row: 1;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 `;
 
 const TimerLeft = styled.h1`
