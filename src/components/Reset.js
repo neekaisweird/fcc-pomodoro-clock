@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Button = styled.button`
   background-color: transparent;
   border: 2px solid #000;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 0.7rem 1rem;
   font-family: 'Fira Code', monospace;
   font-size: 1.5rem;
@@ -13,8 +13,9 @@ const Button = styled.button`
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
+  transition: border-radius 200ms;
   &:hover {
-    // color: white;
+    border-radius: 15px;
   }
 `;
 
