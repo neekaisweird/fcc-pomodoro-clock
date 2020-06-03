@@ -50,7 +50,6 @@ const Timer = () => {
   useInterval(
     () => {
       setTimer(currentTimer.time - 1000);
-      console.log(convertTime(currentTimer.time - 1000));
     },
     currentTimer.running && currentTimer.time !== -1000 ? 1000 : null
   );
@@ -79,7 +78,6 @@ const Timer = () => {
         id="beep"
         ref={beep}
         src="https://sampleswap.org/samples-ghost/DRUM%20LOOPS%20and%20BREAKS/121%20to%20130%20bpm/331[kb]125_lo-squeaky-beep.aif.mp3"
-        // src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Weird%20and%20Interesting%20Hits/66[kb]three-beep-stereo.aif.mp3"
       />
     </>
   );
