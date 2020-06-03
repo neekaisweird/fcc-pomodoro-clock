@@ -1,6 +1,5 @@
 import React from 'react';
-import Session from './Session';
-import Break from './Break';
+import LengthControl from './LengthControl';
 import StartStop from './StartStop';
 import Reset from './Reset';
 import styled from 'styled-components';
@@ -13,8 +12,8 @@ const ControlsWrapper = styled.div`
 const Controls = () => {
   return (
     <ControlsWrapper>
-      <Session />
-      <Break />
+      <LengthControl type="session" />
+      <LengthControl type="break" />
       <StartStop />
       <Reset />
     </ControlsWrapper>
